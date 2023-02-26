@@ -1,0 +1,44 @@
+[
+    {
+    "id": 1,
+    "title": "iPhone X",
+    "description": "The latest smartphone from Apple",
+    "code": "IPX",
+    "price": 999,
+    "status": true,
+    "stock": 50,
+    "category": "Smartphone",
+    "thumbnails": [
+    "https://apple.com/iphone-x/img1.jpg",
+    "https://apple.com/iphone-x/img2.jpg"
+    ]
+    },
+    {
+    "id": 2,
+    "title": "Macbook Pro",
+    "description": "A powerful laptop from Apple",
+    "code": "MBP",
+    "price": 1999,
+    "status": true,
+    "stock": 20,
+    "category": "Laptop",
+    "thumbnails": [
+    "https://apple.com/macbook-pro/img1.jpg",
+    "https://apple.com/macbook-pro/img2.jpg"
+    ]
+    },
+    {
+    "id": 3,
+    "title": "Microsoft Surface",
+    "description": "A versatile tablet from Microsoft",
+    "code": "MS",
+    "price": 899,
+    "status": true,
+    "stock": 30,
+    "category": "Tablet",
+    "thumbnails": [
+    "https://microsoft.com/surface/img1.jpg",
+    "https://microsoft.com/surface/img2.jpg"
+    ]
+    }
+    ]
