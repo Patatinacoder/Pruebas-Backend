@@ -1,0 +1,35 @@
+###
+POST http://localhost:3000/api/products/add HTTP/1.1
+Content-Type: application/json
+
+
+
+{
+    "title": "Iphone 5000",
+    "description": "Extraordinary how many iphones we have",
+    "price": 1000000000,
+    "stock": 2,
+    "category": "Cellphone"
+}
+
+###
+GET http://localhost:3000/api/products/ HTTP/1.1
+
+###
+GET http://localhost:3000/api/products/640688b5a6fd1ff23d18e768 HTTP/1.1
+
+###
+PUT  http://localhost:3000/api/products/640684733d0145ad6f17a484 HTTP/1.1
+Content-Type:  application/json
+
+{
+     "title": "Iphone 50",
+    "description": "Extraordinary how many iphones we have",
+    "price": 1000000000,
+    "stock": 2,
+    "category": "Cellphone"
+}
+
+###
+DELETE  http://localhost:3000/api/products/64068cca78d2c241264c301c/ HTTP/1.1
+
