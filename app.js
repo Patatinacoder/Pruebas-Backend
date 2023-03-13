@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 import mongoose from "mongoose";
 dotenv.config();
 
-
 app.use(bodyParser.json());
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
@@ -19,7 +18,7 @@ mongoose.set('strictQuery', false);
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to Mongo Atlas'))
-  .catch((error) => console.log(error));
+  .catch((error) => console.error(error));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

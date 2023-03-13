@@ -5,9 +5,9 @@ Content-Type: application/json
 
 
 {
-    "title": "Iphone 5000",
+    "title": "Iphone 300",
     "description": "Extraordinary how many iphones we have",
-    "price": 1000000000,
+    "price": 1000000,
     "stock": 2,
     "category": "Cellphone"
 }
@@ -23,11 +23,11 @@ PUT  http://localhost:3000/api/products/640684733d0145ad6f17a484 HTTP/1.1
 Content-Type:  application/json
 
 {
-     "title": "Iphone 50",
-    "description": "Extraordinary how many iphones we have",
-    "price": 1000000000,
-    "stock": 2,
-    "category": "Cellphone"
+     "title": "Ipad mini retina",
+    "description": "Oldie-Goldie",
+    "price": 10000,
+    "stock": 20,
+    "category": "lPads/Tablets"
 }
 
 ###
