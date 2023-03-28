@@ -5,11 +5,11 @@ Content-Type: application/json
 
 
 {
-    "title": "Iphone 300",
-    "description": "Extraordinary how many iphones we have",
-    "price": 1000000,
-    "stock": 2,
-    "category": "Cellphone"
+    "title": "Chromebook ",
+    "description": "Not an apple product",
+    "price": 150,
+    "stock": 100,
+    "category": "Notebook"
 }
 
 ###
