@@ -17,14 +17,14 @@ productRouter.get('/', async (req, res) => {
 });
 
 productRouter.get('/products', async (req, res) => {
-  const perPage = 10;
+  const perPage = 5;
   const page = req.query.page || 1;
   try {
     const products = await Product.find()
       .skip((perPage * page) - perPage)
       .limit(perPage);
     const count = await Product.countDocuments();
-    res.render('products', {
+    res.render('index', {
       products,
       current: page,
       pages: Math.ceil(count / perPage)
@@ -37,15 +37,17 @@ productRouter.get('/products', async (req, res) => {
 
 productRouter.get('/products/:id', async (req, res) => {
   const productId = req.params.id;
-  if (!isValidObjectId(productId)) {
-    return res.status(400).send('ID de producto inválida');
-  }
+  // if (!isValidObjectId(productId)) {
+  //   return res.status(400).send('ID de producto inválida');
+  // }
   try {
     const product = await Product.findById(productId);
     if (!product) {
+
+      //agregar res.render a details en ejs
       return res.status(404).send('Producto no encontrado');
     }
-    res.render('productDetails', { product });
+    res.status(200).send(product);
   } catch (err) {
     console.error(err);
     res.status(500).send('Error al obtener el producto');
@@ -61,10 +63,14 @@ res.status(200).send({message: 'Producto agregado con éxito', product: newProdu
 });
 
 
-productRouter.post('/products/:id/addToCart', async (req, res) => {
+productRouter.get('/products/:id/addToCart', async (req, res) => {
   const productId = req.params.id;
   try {
     const cartId = req.session.cartId;
+    if(cartId== null){
+      cartId=0
+
+    }
     const product = await Product.findById(productId);
     const cart = await cartSchema.findById(cartId);
     if (!cart) {
@@ -87,7 +93,7 @@ productRouter.post('/products/:id/addToCart', async (req, res) => {
     res.redirect('/carts/' + req.session.cartId);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Error al agregar el producto al carrito');
+    res.status(500).send(err.message);
   }
 });
 
