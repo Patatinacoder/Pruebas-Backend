@@ -6,8 +6,8 @@ import dotenv from 'dotenv';
 import mongoose from "mongoose";
 import path from "path";
 import  {dirname}  from "path";
-import {fileURLToPath } from "url";
-import session from "express-session";
+import {fileURLToPath }from "url";
+import sessionRouter from './Routes/sessionRouter.js'
 
 dotenv.config();
 const app = express();
@@ -17,18 +17,16 @@ app.use(bodyParser.json());
 app.use('/api/products', productRouter);
 
 app.use('/api/carts', cartRouter);
+app.use('/', sessionRouter)
 
-app.use(session({
-  secret: 'my-secret-key',
-  resave: false,
-  saveUninitialized: false
-}));
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.set('views', path.join(__dirname, 'views'));
-
 app.set('view engine', 'ejs');
 
+app.get('/', function(req, res, next) {
+  res.redirect('/login');
+});
 
 mongoose.set('strictQuery', false);
 
