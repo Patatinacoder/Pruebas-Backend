@@ -8,6 +8,7 @@ import path from "path";
 import  {dirname}  from "path";
 import {fileURLToPath }from "url";
 import sessionRouter from './Routes/sessionRouter.js'
+import passport from "./Routes/passportRouter.js"
 
 dotenv.config();
 const app = express();
@@ -19,6 +20,10 @@ app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 app.use('/', sessionRouter)
 
+
+// Configurar Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.set('views', path.join(__dirname, 'views'));

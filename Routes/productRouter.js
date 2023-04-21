@@ -6,6 +6,8 @@ import cartSchema from '../models/cart.js';
 
 const productRouter = Router();
 
+
+
 productRouter.get('/', async (req, res) => {
   try {
     const products = await Product.find();

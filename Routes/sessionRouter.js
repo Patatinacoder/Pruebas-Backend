@@ -1,6 +1,6 @@
 import express from 'express';
 import session from 'express-session';
-import User from '../models/session.js';
+import User from '../models/user.js';
 import Product from '../models/product.js';
 
 const sessionRouter = express.Router();
